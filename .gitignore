@@ -55,6 +55,7 @@ instance/
 # pyenv
 .python-version
 .venv
+dev.env
 
 # Editors
 .vscode
@@ -69,3 +70,5 @@ instance/
 # Virtualenv
 venv/
 .venv/
+
+
