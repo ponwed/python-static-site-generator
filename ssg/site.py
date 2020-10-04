@@ -6,7 +6,7 @@ class Site:
         self.dest = Path(dest)
         self.parsers = parsers or []
 
-    def create_dir(self, path):
+    def create_dir(self, path: Path):
         directory = Path(self.dest/path.relative_to(self.source))
         directory.mkdir(parents=True, exist_ok=True)
         
@@ -23,7 +23,7 @@ class Site:
             if parser.valid_extension(extension): 
                 return parser
 
-    def run_parser(self, path):
+    def run_parser(self, path: Path):
         parser = self.load_parser(path.suffix)
         if parser is not None:
             parser.parse(path, self.source, self.dest)
